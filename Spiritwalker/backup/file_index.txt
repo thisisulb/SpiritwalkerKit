@@ -1,0 +1,55 @@
+UB#SWCRA.CRE - dummy creature for shapeshifting  
+UB#SWTIG.CRE - dummy creature for shapeshifting  
+UB#SWYAK.CRE - dummy creature for shapeshifting  
+UB#SW0A.SPL - change bard song effect 
+	UB#SW1A.SPL - new shamanic dance (bard song)  	
+		UB#SW1.BAM - spirit forms attack .bam  				
+		UB#SW1B.SPL - shamanic dance sub-spell: transform into crane spirit  
+			UB#SW1B1.ITM - crane spirit attack lvl 1  
+			UB#SW1B2.ITM - crane spirit attack lvl 6  
+			UB#SW1B3.ITM - crane spirit attack lvl 12  
+			UB#SW1B4.ITM - crane spirit attack lvl 18  
+			UB#SW1B5.ITM - crane spirit attack lvl 24  
+		UB#SW1C.SPL - shamanic dance sub-spell: transform into tiger spirit  
+			UB#SW1C1.ITM - tiger spirit attack lvl 1  
+			UB#SW1C2.ITM - tiger spirit attack lvl 6  
+			UB#SW1C3.ITM - tiger spirit attack lvl 12  
+			UB#SW1C4.ITM - tiger spirit attack lvl 18  
+			UB#SW1C5.ITM - tiger spirit attack lvl 24  
+		UB#SW1D.SPL - shamanic dance sub-spell: transform into yak spirit  
+			UB#SW1D1.ITM - yak spirit attack lvl 1  
+			UB#SW1D2.ITM - yak spirit attack lvl 6  
+			UB#SW1D3.ITM - yak spirit attack lvl 12  
+			UB#SW1D4.ITM - yak spirit attack lvl 18  
+			UB#SW1D5.ITM - yak spirit attack lvl 24  				
+		UB#SW1E.SPL - transform into natural form  
+		UB#SW1E.ITM - dummy itm to patch tranformation spells
+		UB#SW1X.SPL - dummy spell to stop bard song  			
+	UB#SW2A.SPL - select spirit animal form  
+	UB#SW2A.2DA - spell selection list  
+			UB#SW2A.BAM - select spirit animal form icon  
+		UB#SW2B.SPL - select spirit cran  
+			UB#SW2B.BAM - spirit crane icon  
+		UB#SW2C.SPL - select spirit tiger  
+			UB#SW2C.BAM - spirit tiger icon  
+		UB#SW2D.SPL - select spirit yak  
+			UB#SW2D.BAM - spirit yak icon  								
+UB#SW3B.SPL  - crane special ability  
+	UB#SW3B.BAM - crane special ability icon  
+UB#SW3C.SPL  - tiger special ability  
+	UB#SW3C.BAM - tiger special ability icon  			
+UB#SW3D.SPL  - yak special ability  [DONE]		
+	UB#SW3D.BAM - yak special ability icon  			
+UB#SW4.SPL - Give UB#SW4A.SPL as HLA / Remove UB#SW2A  	
+UB#SW4A.SPL - select spirit animal form  HLA		
+	UB#SW4.BAM - HLA select spirit animal form icon  	
+		UB#SW4A.2DA - spell selection list  HLA  
+			UB#SW4B.SPL - select & shift spirit cran  
+			UB#SW4C.SPL - select & shift spirit tiger  
+			UB#SW4D.SPL - select & shift spirit yak  			
+UB#SW5.SPL - HLA 2HP  x99 
+UB#SW6.SPL - HLA 5% crit 
+UB#SW2X.BAM - Copy of UB#SW2B.BAM to prevent strange bug.
+UB#SW7.SPL - HLA 5% magic resistance  
+CLABUB$W.2DA  - CLAB file
+LUUB#SW.2DA - LUA file		

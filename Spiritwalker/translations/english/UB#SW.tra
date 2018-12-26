@@ -1,0 +1,207 @@
+@1 = ~Spiritwalker~
+@2 = ~SPIRITWALKER: Spiritwalkers forge a divine connection with the natural and spiritual world just like other Shamans do. While those others call on a great number of Lesser and Greater Spirits to aid their cause, Spiritwalkers form a closer and more personal bond with a select few but powerful Spirit Animals.
+When they call on those Spirit Animals during their Shamanic Dance they do not ask the Spirits to fight for them directly. Instead they invite the Spirits into their own bodies to help them shapeshift into the form of a Spirit Animal themselves.
+
+CLASS FEATURES: 
+
+- May only wear leather, studded leather, and hide armor
+- May not equip shields larger than bucklers 
+- May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and short bow 
+- May only become Proficient (one slot) in any weapon class 
+- May only become Proficient (one slot) in any fighting style 
+- May cast druidic spells 
+- Does not automatically learn all spells of a given level as Druids do. Instead, Shamans select new spells to learn at each level, which they can cast daily without memorization 
+- Gains immediate access to a number of Shaman-specific spells, which can be cast like any other: Spirit Ward, Writhing Fog, Spiritual Clarity, Spirit Fire, Recall Spirit, Spiritual Lock, and Ether Gate 
+- Gains use of Detect Illusion skill with 20% points as a base, with an additional 4 points per level, up to a maximum of 100% at level 20 
+- Does not gain bonus spells per day for high Wisdom 
+- Hit Die: d8 
+- May not Dual-class 
+- May use Shamanic Dance at will. 
+
+SHAMANIC DANCE:
+Spiritwalkers can shapeshift into Spirit Animal Forms by performing a ritualistic dance. While dancing, the Shaman takes a +4 penalty to Armor Class and cannot move, attack, cast spells, use items and special abilities, or perform any other activity. After one round of dancing the Shaman will shapeshift into the form of the Spirit Animal <PRO_HESHE> has previously attuned <PRO_HIMHER>self to by using the Spirit Attunement Special Ability.
+	
+	SPIRIT FORMS:
+	While in any of <PRO_HISHER> Spirit Forms the Spiritwalker gains 20% resistance to all physical damage due to <PRO_HISHER> semi-corporal form but can not benefit from Iron Skins and similar effects.
+
+	SPIRIT YAK FORM:
+	The Spiritwalker calls upon the powers of an Ancient Yak Spirit, the epitome of durability and fortitude, and gains the following traits:
+		Massive Size: While in Spirit Yak Form the Shaman is immune to a dragon's Wing Buffet and similar knock-back effects but moves slower than normal and might not fit into or through small spaces.
+		Animal Mind: While the Shaman's intelligence score and reasoning skills remain largely the same, <PRO_HISHER> thoughts become more animal like and <PRO_HISHER> cleric spells inaccessible
+		LVL1:  +1 AC, +50% HP, +1 STR/CON, Attack: 1d2 Crushing Damage (hits as +1), 1 Attack per Round.
+		LVL6:  +2 AC, +100% HP, + 2STR/CON, Attack: 1d2 Crushing Damage (hits as +2), 1 Attack per Round.
+		LVL12: +3 AC, +150% HP, +3 STR/CON, Attack: 1d2 Crushing Damage (hits as +3), 1 Attack per Round.
+		LVL18: +4 AC, +200% HP, +4 STR/CON, Attack: 1d2 Crushing Damage (hits as +4), 1 Attack per Round.
+		LVL24: +5 AC, +250% HP, +5 STR/CON, Attack: 1d2 Crushing Damage (hits as +5), 1 Attack per Round.
+		May use 'Booming Roar' ability once per turn.
+
+		BOOMING ROAR:
+		The Spirit Yak emits a powerful, booming roar. All opponents in a 30' radius that hear the roar have their sense of balance impaired, resulting in a -2 penalty to their THAC0 and a 50% reduced movement rate for two rounds. 
+		Those that fail their Saving Throw vs. Breath Weapon (with a -1 penalty for every 7 levels of the Shaman, up to -4 at level 28) will also be deafened for two rounds with a 50% chance of spell failure.
+		None-living creatures and creatures who do not possess hearing organs, like elementals or slimes, are immune to this ability.
+		Note: Using this ability is very taxing and will disable the Shaman's Special Abilities for one turn.
+	
+	
+	SPIRIT TIGER FORM:
+	The Spiritwalker calls upon the powers of an Ancient Tiger Spirit, a powerful and swift predator, and gains the following traits:
+		Feline Predator: While in Spirit Tiger Form the Shaman moves faster than normal and has a 10% increased Critical Hit Chance but suffers a penalty of -30% to <PRO_HISHER> maximum Hit Points and +4 to <PRO_HISHER> AC.
+		Animal Mind: While the Shaman's intelligence score and reasoning skills remain largely the same, <PRO_HISHER> thoughts become more animal like and <PRO_HISHER> cleric spells inaccessible
+		LVL1:  +1 STR, +1 THAC0, Attack: 1d8 Slashing Damage (hits as +1), 1,5 Attacks per Round.
+		LVL6:  +2 STR, +2 THAC0, Attack: 1d8+1 Slashing Damage (hits as +2), 1,5 Attacks per Round.
+		LVL12: +3 STR, +3 THAC0, Attack: 1d8+2 Slashing Damage (hits as +3), 2 Attacks per Round.
+		LVL18: +4 STR, +4 THAC0, Attack: 2d8+1 Slashing Damage (hits as +4), 2 Attacks per Round.
+		LVL24: +5 STR, +5 THAC0, Attack: 2d8+4 Slashing Damage (hits as +5), 2,5 Attacks per Round.	
+		May use 'Ravenous Pounce' ability once per turn.		
+		
+		RAVENOUS POUNCE:
+		The Spirit Tiger pounces onto <PRO_HISHER> target, biting it and consuming parts of its physical and spiritual body to restore <PRO_HISHER> own health. The target takes 1d8 slashing damage plus additional 4 slashing damage for every three levels of the Shaman (up to 1d8+40 at level 30) while the Shaman gains the same amount of Hit Points. (Hit Points gained this way can not exceed the Shaman's maximum health however.)
+		If the target fails a Saving Throw vs. Breath Weapon (-1 penalty for every 6 levels of the caster, up to -5 at level 30) it will also be knocked down for one round.
+		Even though this ability can hit opponents that require the most potent of magical weapons to be hurt, those under the 'Protection from Magical Weapons' spell will not to affected.
+		Note: Using this ability is very taxing and will disable the Shaman's Special Abilities for one turn.
+
+		
+	SPIRIT CRANE FORM:
+	The Spiritwalker calls upon the powers of an Ancient Crane Spirit, a mythical creature of great power and wisdom, and gains the following traits:
+		Weak Build: While in Spirit Crane Form the Shaman suffers a penalty of -70% to <PRO_HISHER> maximum Hit Points and +4 to <PRO_HISHER> AC.
+		Mystical Mind: The Shaman's thoughts become more attuned to the mystical nature of the world and <PRO_HESHE> gains a +2 bonus to <PRO_HISHER> spell casting speed.
+		LVL1:  +1 to all Saving Throws, +5% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +1), 1 Attack per Round.
+		LVL6:  +1 to all Saving Throws, +10% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +2), 1 Attack per Round.
+		LVL12: +2 to all Saving Throws, +15% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +3), 1 Attack per Round.
+		LVL18: +3 to all Saving Throws, +20% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +4), 1 Attack per Round.
+		LVL24: +4 to all Saving Throws, +25% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +5), 1 Attack per Round.
+		May use 'Mystic Wisdom' ability once per turn.
+
+		MYSTIC WISDOM:
+		The Spirit Crane draws upon <PRO_HISHER> innate mystical understanding to cleanse <PRO_HIMHER>self from residue magical energies left over from previous spells.
+		For the next two rounds this ability allows the Spirit Crane to cast without having to pause between spells.
+		Note: Using this ability is very taxing and will disable the Shaman's Special Abilities for one turn.~
+@3 = ~Attack~
+@4 = ~Shapeshift: Natural Form~
+@5 = ~Shapeshift: Natural Form
+  This ability causes the Spiritwalker to return to <PRO_HISHER> natural shape and ends the polymorph effect.~
+@6 = ~Spirit Attunement~
+@7 = ~Spirit Attunement
+  This ability allows the Shaman to attune <PRO_HIMHER>self to one of <PRO_HISHER> Spirit Animals. Doing so will cause <PRO_HIMHER> to shapeshift into that Spirit Animal's form when using <PRO_HISHER> Shamanic Dance.~
+@8 = ~Spirit Attunement: Crane~
+@9 = ~Spirit Attunement: Crane
+  This ability attunes the Spiritwalker to an Ancient Crane Spirit~
+@10 = ~Spirit Attunement: Tiger~
+@11 = ~Spirit Attunement: Tiger
+  This ability attunes the Spiritwalker to an Ancient Tiger Spirit~
+@12 = ~Spirit Attunement: Yak~
+@13 = ~Spirit Attunement: Yak
+  This ability attunes the Spiritwalker to an Ancient Yak Spirit~
+@14 = ~Mystic Wisdom~
+@15 = ~Mystic Wisdom:
+		The Spirit Crane draws upon <PRO_HISHER> innate mystical understanding to cleanse <PRO_HIMHER>self from residue magical energies left over from previous spells.
+		For the next two rounds this ability allows the Spirit Crane to cast without having to pause between spells.
+		
+		Note: Using this ability is very taxing and will disable the Shaman's Special Abilities for one turn.~
+@16 = ~Ravenous Pounce~
+@17 = ~Ravenous Pounce:
+		The Spirit Tiger pounces onto <PRO_HISHER> target, biting it and consuming parts of its physical and spiritual body to restore <PRO_HISHER> own health. The target takes 1d8 slashing damage plus additional 4 slashing damage for every three levels of the Shaman (up to 1d8+40 at level 30) while the Shaman gains the same amount of Hit Points. (Hit Points gained this way can not exceed the Shaman's maximum health however.)
+		If the target fails a Saving Throw vs. Breath Weapon (-1 penalty for every 6 levels of the caster, up to -5 at level 30) it will also be knocked down for one round.
+		Even though this ability can hit opponents that require the most potent of magical weapons to be hurt, those under the 'Protection from Magical Weapons' spell will not to affected.
+		
+		Note: Using this ability is very taxing and will disable the Shaman's Special Abilities for one turn.~
+@18 = ~Booming Roar~
+@19 = ~Booming Roar:
+		The Spirit Yak emits a powerful, booming roar. All opponents in a 30' radius that hear the roar have their sense of balance impaired, resulting in a -2 penalty to their THAC0 and a 50% reduced movement rate for two rounds. 
+		Those that fail their Saving Throw vs. Breath Weapon (with a -1 penalty for every 7 levels of the Shaman, up to -4 at level 28) will also be deafened for two rounds with a 50% chance of spell failure.
+		None-living creatures and creatures who do not possess hearing organs, like elementals or slimes, are immune to this ability.
+		
+		Note: Using this ability is very taxing and will disable the Shaman's Special Abilities for one turn.~
+@20 = ~Spirit Vessel~
+@21 = ~Spirit Vessel:
+		The Spiritwalker's divine connection to the Animal Spirits <PRO_HESHE> calls upon has grown so much that they have become a part of <PRO_HIMHER>self. As a result, the Shaman is now able to instantly shapeshift into all Spirit Forms by using the Spirit Form Selection in the Special Abilities menu.
+		Requires: Spirit Essence: Crane - Mystic Insight.~
+@22 = ~Shapeshift: Spirit Animal Form~
+@23 = ~Shapeshift Spirit Animal Form:
+  This ability allows the Spiritwalker to choose and instantly transform into any of <PRO_HISHER> Spirit Animal Forms.
+  
+  SPIRIT FORMS:
+  While in any of <PRO_HISHER> Spirit Forms the Spiritwalker gains 20% resistance to all physical damage due to <PRO_HISHER> semi corporal form, but can not benefit from Iron Skins and similar effects.
+
+	SPIRIT YAK FORM:
+	The Spiritwalker calls upon the powers of an Ancient Yak Spirit, the epitome of durability and fortitude, and gains the following traits:
+		Massive Size: While in Spirit Yak Form the Shaman is immune to a dragon's Wing Buffet and similar knock-back effects but moves slower than normal and might not fit into or through small spaces.
+		Animal Mind: While the Shaman's intelligence score and reasoning skills remain largely the same, <PRO_HISHER> thoughts become more animal like and <PRO_HISHER> cleric spells inaccessible.
+		LVL1:  +1 AC, +50% HP, +1 STR/CON, Attack: 1d2 Crushing Damage (hits as +1), 1 Attack per Round.
+		LVL6:  +2 AC, +100% HP, + 2STR/CON, Attack: 1d2 Crushing Damage (hits as +2), 1 Attack per Round.
+		LVL12: +3 AC, +150% HP, +3 STR/CON, Attack: 1d2 Crushing Damage (hits as +3), 1 Attack per Round.
+		LVL18: +4 AC, +200% HP, +4 STR/CON, Attack: 1d2 Crushing Damage (hits as +4), 1 Attack per Round.
+		LVL24: +5 AC, +250% HP, +5 STR/CON, Attack: 1d2 Crushing Damage (hits as +5), 1 Attack per Round.
+		May use 'Booming Roar' ability once per turn.
+		
+	SPIRIT TIGER FORM:
+	The Spiritwalker calls upon the powers of an Ancient Tiger Spirit, a powerful and swift predator, and gains the following traits:
+		Feline Predator: While in Spirit Tiger Form the Shaman moves faster than normal and has a 10% increased Critical Hit Chance but suffers a penalty of -30% to <PRO_HISHER> maximum Hit Points and +4 to <PRO_HISHER> AC.
+		Animal Mind: While the Shaman's intelligence score and reasoning skills remain largely the same, <PRO_HISHER> thoughts become more animal like and <PRO_HISHER> cleric spells inaccessible.
+		LVL1:  +1 STR, +1 THAC0, Attack: 1d8 Slashing Damage (hits as +1), 1,5 Attacks per Round.
+		LVL6:  +2 STR, +2 THAC0, Attack: 1d8+1 Slashing Damage (hits as +2), 1,5 Attacks per Round.
+		LVL12: +3 STR, +3 THAC0, Attack: 1d8+2 Slashing Damage (hits as +3), 2 Attacks per Round.
+		LVL18: +4 STR, +4 THAC0, Attack: 2d8+1 Slashing Damage (hits as +4), 2 Attacks per Round.
+		LVL24: +5 STR, +5 THAC0, Attack: 2d8+4 Slashing Damage (hits as +5), 2,5 Attacks per Round.	
+		May use 'Ravenous Pounce' ability once per turn.		
+		
+	SPIRIT CRANE FORM:
+	The Spiritwalker calls upon the powers of an Ancient Crane Spirit, a mythical creature of great power and wisdom, and gains the following traits:
+		Weak Build: While in Spirit Crane Form the Shaman suffers a penalty of -70% to <PRO_HISHER> maximum Hit Points and +4 to <PRO_HISHER> AC.
+		Mystical Mind: The Shaman's thoughts become more attuned to the mystical nature of the world and <PRO_HESHE> gains a +2 bonus to <PRO_HISHER> spell casting speed.
+		LVL1:  +1 to all Saving Throws, +5% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +1), 1 Attack per Round.
+		LVL6:  +1 to all Saving Throws, +10% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +2), 1 Attack per Round.
+		LVL12: +2 to all Saving Throws, +15% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +3), 1 Attack per Round.
+		LVL18: +3 to all Saving Throws, +20% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +4), 1 Attack per Round.
+		LVL24: +4 to all Saving Throws, +25% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +5), 1 Attack per Round.
+		May use 'Mystic Wisdom' ability once per turn.~
+@24 = ~Shapeshift Spirit Crane Form~
+@25 = ~Shapeshift: Spirit Crane Form:
+  This ability allows the Spiritwalker to instantly transform into <PRO_HISHER> Spirit Crane Form.
+  SPIRIT CRANE FORM:
+	Semi-Corporal: Gains 20% Physical Damage Resistance.
+	Weak Build: While in Spirit Crane Form the Shaman suffers a penalty of -70% to <PRO_HISHER> maximum Hit Points and +4 to <PRO_HISHER> AC.
+	Mystical Mind: The Shaman's thoughts become more attuned to the mystical nature of the world and <PRO_HESHE> gains a +2 bonus to <PRO_HISHER> spell casting speed.
+	LVL1:  +1 to all Saving Throws, +5% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +1), 1 Attack per Round.
+	LVL6:  +1 to all Saving Throws, +10% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +2), 1 Attack per Round.
+	LVL12: +2 to all Saving Throws, +15% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +3), 1 Attack per Round.
+	LVL18: +3 to all Saving Throws, +20% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +4), 1 Attack per Round.
+	LVL24: +4 to all Saving Throws, +25% Magic Resistance, Attack: 1d6 Piercing Damage (hits as +5), 1 Attack per Round.
+	May use 'Mystic Wisdom' ability once per turn.~
+@26 = ~Shapeshift: Spirit Tiger Form~
+@27 = ~Shapeshift Spirit Tiger Form:
+  This ability allows the Spiritwalker to instantly transform into <PRO_HISHER> Spirit Tiger Form.
+  SPIRIT TIGER FORM:
+	Semi-Corporal: Gains 20% Physical Damage Resistance.
+	Feline Predator: While in Spirit Tiger Form the Shaman moves faster than normal and has a 10% increased Critical Hit Chance but suffers a penalty of -30% to <PRO_HISHER> maximum Hit Points and +4 to <PRO_HISHER> AC.
+	Animal Mind: While the Shaman's intelligence score and reasoning skills remain largely the same, <PRO_HISHER> thoughts become more animal like and <PRO_HISHER> cleric spells inaccessible.
+	LVL1:  +1 STR, +1 THAC0, Attack: 1d8 Slashing Damage (hits as +1), 1,5 Attacks per Round.
+	LVL6:  +2 STR, +2 THAC0, Attack: 1d8+1 Slashing Damage (hits as +2), 1,5 Attacks per Round.
+	LVL12: +3 STR, +3 THAC0, Attack: 1d8+2 Slashing Damage (hits as +3), 2 Attacks per Round.
+	LVL18: +4 STR, +4 THAC0, Attack: 2d8+1 Slashing Damage (hits as +4), 2 Attacks per Round.
+	LVL24: +5 STR, +5 THAC0, Attack: 2d8+4 Slashing Damage (hits as +5), 2,5 Attacks per Round.	
+	May use 'Ravenous Pounce' ability once per turn.~
+@28 = ~Shapeshift: Spirit Yak Form~
+@29 = ~Shapeshift Spirit Yak Form:
+  This ability allows the Spiritwalker to instantly transform into <PRO_HISHER> Spirit Yak Form.
+  SPIRIT YAK FORM:
+	Semi-Corporal: Gains 20% Physical Damage Resistance.
+	Massive Size: While in Spirit Yak Form the Shaman is immune to a dragon's Wing Buffet and similar knock-back effects but moves slower than normal and might not fit into or through small spaces.
+	Animal Mind: While the Shaman's intelligence score and reasoning skills remain largely the same, <PRO_HISHER> thoughts become more animal like and <PRO_HISHER> cleric spells inaccessible.
+	LVL1:  +1 AC, +50% HP, +1 STR/CON, Attack: 1d2 Crushing Damage (hits as +1), 1 Attack per Round.
+	LVL6:  +2 AC, +100% HP, + 2STR/CON, Attack: 1d2 Crushing Damage (hits as +2), 1 Attack per Round.
+	LVL12: +3 AC, +150% HP, +3 STR/CON, Attack: 1d2 Crushing Damage (hits as +3), 1 Attack per Round.
+	LVL18: +4 AC, +200% HP, +4 STR/CON, Attack: 1d2 Crushing Damage (hits as +4), 1 Attack per Round.
+	LVL24: +5 AC, +250% HP, +5 STR/CON, Attack: 1d2 Crushing Damage (hits as +5), 1 Attack per Round.
+	May use 'Booming Roar' ability once per turn.~
+@30 = ~Spirit Essence Yak - Endless Fortitude~
+@31 = ~Spirit Essence Yak - Endless Fortitude:
+  The Spiritwalker's divine connection to <PRO_HISHER> Ancient Yak Spirit grows even more close and <PRO_HESHE> takes on some of the Yak's essence, gaining +2 permanent Hit Points.
+  This ability make be chosen an infinite number of times.~
+@32 = ~Spirit Essence Tiger - Savage Predator~
+@33 = ~Spirit Essence Tiger - Savage Predator:
+  The Spiritwalker's divine connection to <PRO_HISHER> Ancient Tiger Spirit grows even more close and <PRO_HESHE> takes on some of the Tiger's essence, gaining +5% permanent Critical Hit Chance.
+  Requires: Spirit Essence Yak - Endless Fortitude.~
+@34 = ~Spirit Essence Crane - Mystic Insight~
+@35 = ~Spirit Essence Crane - Mystic Insight:
+  The Spiritwalker's divine connection to <PRO_HISHER> Ancient Crane Spirit grows even more close and <PRO_HESHE> takes on some of the Cranes's essence, gaining +5% permanent Magic Resistance.
+  Requires: Spirit Essence Tiger - Savage Predator.~

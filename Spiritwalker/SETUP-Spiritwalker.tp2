@@ -1,0 +1,561 @@
+BACKUP ~Spiritwalker/Backup~ // So WeiDU can uninstall
+AUTHOR ~Ulb~
+README ~Spiritwalker/readme.pdf~ // Shows readme file
+VERSION ~1.2~
+
+ALWAYS
+  INCLUDE ~Spiritwalker/lib/functions.tph~   // Borrowed from Argent77 for dynamic animtion slot search code
+  INCLUDE ~Spiritwalker/lib/handle_charsets.tpa~   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+  INCLUDE ~Spiritwalker/lib/fl#add_kit_ee.tpa~ // EE compatibility patch, updated version by Subtledoctor
+  ACTION_DEFINE_ARRAY UBnoconvert BEGIN END // No exception, everything needs to be converted
+  ACTION_DEFINE_ARRAY UBreload BEGIN UB#SW END   // UB#SW.tra needs to be reloaded?
+  LAF HANDLE_CHARSETS     // There is no "language" folder so the root of all languages is Spiritwalker
+    INT_VAR
+      infer_charset = 1
+    STR_VAR
+      tra_path = EVAL ~Spiritwalker/translations~
+	  noconvert_array = UBnoconvert
+      reload_array = UBreload
+  END
+  ACTION_IF (NOT GAME_IS ~soa tob iwd2 pst bg1 totsc iwd how totlm tutu tutu_totsc bgt ca iwd_in_bg2 bg2ee eet iwdee~) THEN BEGIN     // Check if BGEE/SOD
+    COPY ~Spiritwalker/files/25STWEAP.2DA~ ~override~                                                               // Add working 25STWEAP.2DA copy from BGII so ADD_KIT command doesn't break
+  END
+END
+  
+LANGUAGE ~English~  ~English~ ~Spiritwalker/translations/english/UB#SW.tra~
+LANGUAGE ~Italian] [Translation by Keerian, proofreading by Aedan and Improbabile~  ~Italian~ ~Spiritwalker/translations/italian/UB#SW.tra~
+//LANGUAGE ~Deutsch~  ~german~  ~Spiritwalker/translations/german/UB#SW.tra~  
+  
+
+  
+BEGIN ~Spiritwalker Shaman Kit~ 
+  REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) ~This mod is only for BGEE, SOD, BG2EE, EET~
+
+
+// Internal name of the kit
+ADD_KIT ~UB#SW~
+
+  // Appended to CLASWEAP.2da
+  ~UB#SW                1       0       1      1       0       0        0       1~
+
+  // Appended column-wise to WEAPPROF.2da
+  ~UB#SW 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  // Appended to ABCLASRQ.2da
+  ~UB#SW                0       0       12     0       12      0~
+
+  // Appended to ABCLSMOD.2da
+  ~UB#SW                0       0       0      0       0       0~
+
+  // Appended to ABDCDSRQ.2da
+  ~UB#SW                0       0       0      0       0       0~
+
+  // Appended to ABDCSCRQ.2da
+  ~UB#SW                0       0       0      0       0       0~
+
+  // Appended to ALIGNMNT.2da
+  ~UB#SW                1       1       1      1       1       1       1       1       1~ // LG LN LE NG NN NE CG CN CE
+
+  // Appended to DUALCLAS.2da
+  ~UB#SW                0       0       0       0       0       0~
+
+  // Path to my CLAB.2da file 
+  ~Spiritwalker/files/CLABUB$W.2da~
+
+  // PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~K_SH_H K_SH_HO~
+
+  // Usability flags, added to the end of the KITLIST.2da entry
+  ~0x00004000        21~
+
+  // HLA table to use; see LUABBR.2da
+  ~UB#SW~
+
+  // List of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+  ~LEAT20 * HELM019 BAG27A RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 HAMM07 SW1H27 STAF08~  // vanilla shaman equippment
+
+  
+  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da 
+  SAY @1
+  SAY @1
+  SAY @2
+  
+  // Call EE compatibility patch
+  LAF fl#add_kit_ee
+    STR_VAR
+    kit_name = UB#SW
+  END
+
+  
+  ///////////////////////////////
+  // Install Spirit Animations //
+  ///////////////////////////////
+  
+  // Crane Animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xe000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~// No free creature animation slot found.
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% CRANE_GOD_WOW~ UNLESS ~CRANE_GOD_WOW~
+  CLEAR_IDS_MAP
+  COPY ~Spiritwalker/files/Crane/exxx.ini~ ~override/%hexNumber%.ini~
+  COPY ~Spiritwalker/files/Crane/Animation~ ~override~
+  COPY ~Spiritwalker/files/Crane/Sound~ ~override~
+
+  
+  // Tiger Animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xe000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~// No free creature animation slot found.
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% TIGER_GOD_WOW~ UNLESS ~TIGER_GOD_WOW~
+  CLEAR_IDS_MAP
+  COPY ~Spiritwalker/files/Tiger/exxx.ini~ ~override/%hexNumber%.ini~
+  COPY ~Spiritwalker/files/Tiger/Animation~ ~override~
+  COPY ~Spiritwalker/files/Tiger/Sound~ ~override~
+
+  
+  // Yak Animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xe000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~// No free creature animation slot found.
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% YAK_GOD_WOW~ UNLESS ~YAK_GOD_WOW~
+  CLEAR_IDS_MAP
+  COPY ~Spiritwalker/files/Yak/exxx.ini~ ~override/%hexNumber%.ini~
+  COPY ~Spiritwalker/files/Yak/Animation~ ~override~
+  COPY ~Spiritwalker/files/Yak/Sound~ ~override~
+  
+  
+
+  ///////////////////////////////
+  //       Copy Stuff Over     //
+  ///////////////////////////////
+  
+  // Bluk Copy
+	COPY ~Spiritwalker/files/copy~ ~override~  
+  
+  // Items
+	COPY ~Spiritwalker/files/items/UB#SW1b1.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1b2.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1b3.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1b4.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1b5.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+ 
+	COPY ~Spiritwalker/files/items/UB#SW1c1.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1c2.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1c3.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1c4.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1c5.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name 
+  
+	COPY ~Spiritwalker/files/items/UB#SW1d1.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1d2.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1d3.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1d4.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name
+    COPY ~Spiritwalker/files/items/UB#SW1d5.ITM~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+  SAY NAME2 @3 // unidentified name for items OR spell name 
+  
+  
+  
+  // Spells
+  COPY ~Spiritwalker/files/spells/UB#SW1E.SPL~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @5 // unidentified description for items, spell description for spells
+
+  COPY ~Spiritwalker/files/spells/UB#SW2A.SPL~ ~override~
+  SAY NAME1 @6 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @7 // unidentified description for items, spell description for spells
+
+  COPY ~Spiritwalker/files/spells/UB#SW2B.SPL~ ~override~
+  SAY NAME1 @8 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @9 // unidentified description for items, spell description for spells
+
+   COPY ~Spiritwalker/files/spells/UB#SW2C.SPL~ ~override~
+  SAY NAME1 @10 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @11 // unidentified description for items, spell description for spells
+
+  COPY ~Spiritwalker/files/spells/UB#SW2D.SPL~ ~override~
+  SAY NAME1 @12 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @13 // unidentified description for items, spell description for spells
+
+  COPY ~Spiritwalker/files/spells/UB#SW3B.SPL~ ~override~
+  SAY NAME1 @14 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @15 // unidentified description for items, spell description for spells
+		
+
+  COPY ~Spiritwalker/files/spells/UB#SW3C.SPL~ ~override~
+  SAY NAME1 @16 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @17 // unidentified description for items, spell description for spells
+		
+  COPY ~Spiritwalker/files/spells/UB#SW3D.SPL~ ~override~
+  SAY NAME1 @18 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @19 // unidentified description for items, spell description for spells
+  
+  COPY ~Spiritwalker/files/spells/UB#SW4.SPL~ ~override~
+  SAY NAME1 @20 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @21 // unidentified description for items, spell description for spells  
+  
+  COPY ~Spiritwalker/files/spells/UB#SW4A.SPL~ ~override~
+  SAY NAME1 @22 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @23 // unidentified description for items, spell description for spells  
+  
+  COPY ~Spiritwalker/files/spells/UB#SW4B.SPL~ ~override~
+  SAY NAME1 @24 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @25 // unidentified description for items, spell description for spells  
+  
+  
+   COPY ~Spiritwalker/files/spells/UB#SW4C.SPL~ ~override~
+  SAY NAME1 @26 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @27 // unidentified description for items, spell description for spells   
+  
+  
+   COPY ~Spiritwalker/files/spells/UB#SW4D.SPL~ ~override~
+  SAY NAME1 @28 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @29 // unidentified description for items, spell description for spells   
+  
+  
+   COPY ~Spiritwalker/files/spells/UB#SW5.SPL~ ~override~
+  SAY NAME1 @30 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @31 // unidentified description for items, spell description for spells   
+  
+   COPY ~Spiritwalker/files/spells/UB#SW6.SPL~ ~override~
+  SAY NAME1 @32 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @33 // unidentified description for items, spell description for spells   
+  
+   COPY ~Spiritwalker/files/spells/UB#SW7.SPL~ ~override~
+  SAY NAME1 @34 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @35 // unidentified description for items, spell description for spells   
+   
+  
+  ///////////////////////////////
+  //Patch Transformation Spells//
+  ///////////////////////////////
+  
+ACTION_FOR_EACH spell IN OHBBCLT4 SPIN717 SPIN783 SPIN810 SPIN822 SPIN823 SPIN852 SLAYER2 SLAYER3 SLAYER4 SPIN825 BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ BEGIN
+		COPY_EXISTING ~%spell%.spl~ ~override~
+        LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 172                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW3D.SPL~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 172                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW3C.SPL~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 172                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW3B.SPL~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1D5.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1D4.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1D3.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1D2.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1D1.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1C5.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1C4.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1C3.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1C2.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1C1.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1B5.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1B4.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1B3.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1B2.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 112                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1B1.ITM~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 321                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1B.DPL~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 321                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1C.DPL~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 321                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1D.DPL~                                                    
+        END		
+		LAUNCH_PATCH_FUNCTION ~ADD_SPELL_EFFECT~
+          INT_VAR
+            opcode = 172                                                                  
+            target = 1                                                                     
+            timing = 1                                                                     
+            parameter1 = 0                                                                 
+            parameter2 = 0                                                                 
+            probability1 = 100                                                             
+            insert_point = 0
+          STR_VAR resource = ~UB#SW1E.DPL~                                                    
+        END		
+	END
+END
+
+
+/////////////// Patch PolyItems with proper Animations
+CLEAR_IDS_MAP
+COPY_EXISTING ~UB#SWCRA.cre~ ~override~
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~CRANE_GOD_WOW~))
+COPY_EXISTING ~UB#SWTIG.cre~ ~override~
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~TIGER_GOD_WOW~))
+COPY_EXISTING ~UB#SWYAK.cre~ ~override~
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~YAK_GOD_WOW~))
+
+ ACTION_FOR_EACH crane IN UB#SW1B1 UB#SW1B2 UB#SW1B3 UB#SW1B4 UB#SW1B5 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%crane%.itm~ BEGIN
+COPY_EXISTING ~%crane%.itm~ ~override~
+	LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 135 // polymorph
+      parameter1 = (IDS_OF_SYMBOL (~animate~ ~CRANE_GOD_WOW~))
+	END
+	END
+	END
+	
+ ACTION_FOR_EACH tiger IN UB#SW1c1 UB#SW1c2 UB#SW1c3 UB#SW1c4 UB#SW1c5 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%tiger%.itm~ BEGIN
+COPY_EXISTING ~%tiger%.itm~ ~override~
+	LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 135 // polymorph
+      parameter1 = (IDS_OF_SYMBOL (~animate~ ~TIGER_GOD_WOW~))
+	END
+	END
+	END
+
+
+ ACTION_FOR_EACH yak IN UB#SW1d1 UB#SW1d2 UB#SW1d3 UB#SW1d4 UB#SW1d5 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%yak%.itm~ BEGIN
+COPY_EXISTING ~%yak%.itm~ ~override~
+	LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 135 // polymorph
+      parameter1 = (IDS_OF_SYMBOL (~animate~ ~YAK_GOD_WOW~))
+	END
+	END
+	END
