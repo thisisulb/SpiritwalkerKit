@@ -146,7 +146,6 @@ into all Spirit Forms by using the Spirit Form Selection in the Special Abilitie
 Requires: Spirit Essence: Crane - Mystic Insight.
   
 **Credits**  
-- Blizzard Entertainment for the Spirit Animal Animations which I ported from World of Warcraft.  
 - Argent77 for his WeiDU functions and work on NearInfinity  
 - Keerian for the Italian translation  
 - Aedan and Improbabile for proofreading (Italian translation)  
