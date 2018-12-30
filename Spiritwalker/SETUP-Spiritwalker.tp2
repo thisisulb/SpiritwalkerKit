@@ -5,18 +5,7 @@ VERSION ~1.2~
 
 ALWAYS
   INCLUDE ~Spiritwalker/lib/functions.tph~   // Borrowed from Argent77 for dynamic animtion slot search code
-  INCLUDE ~Spiritwalker/lib/handle_charsets.tpa~   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
   INCLUDE ~Spiritwalker/lib/fl#add_kit_ee.tpa~ // EE compatibility patch, updated version by Subtledoctor
-  ACTION_DEFINE_ARRAY UBnoconvert BEGIN END // No exception, everything needs to be converted
-  ACTION_DEFINE_ARRAY UBreload BEGIN UB#SW END   // UB#SW.tra needs to be reloaded?
-  LAF HANDLE_CHARSETS     // There is no "language" folder so the root of all languages is Spiritwalker
-    INT_VAR
-      infer_charset = 1
-    STR_VAR
-      tra_path = EVAL ~Spiritwalker/translations~
-	  noconvert_array = UBnoconvert
-      reload_array = UBreload
-  END
   ACTION_IF (NOT GAME_IS ~soa tob iwd2 pst bg1 totsc iwd how totlm tutu tutu_totsc bgt ca iwd_in_bg2 bg2ee eet iwdee~) THEN BEGIN     // Check if BGEE/SOD
     COPY ~Spiritwalker/files/25STWEAP.2DA~ ~override~                                                               // Add working 25STWEAP.2DA copy from BGII so ADD_KIT command doesn't break
   END
@@ -24,7 +13,7 @@ END
   
 LANGUAGE ~English~  ~English~ ~Spiritwalker/translations/english/UB#SW.tra~
 LANGUAGE ~Italian] [Translation by Keerian, proofreading by Aedan and Improbabile~  ~Italian~ ~Spiritwalker/translations/italian/UB#SW.tra~
-//LANGUAGE ~Deutsch~  ~german~  ~Spiritwalker/translations/german/UB#SW.tra~  
+//LANGUAGE ~French] [Translation by xxxxxxxxxxxxxx~  ~French~  ~Spiritwalker/translations/french/UB#SW.tra~  
   
 
   
