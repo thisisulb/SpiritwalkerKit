@@ -1,7 +1,8 @@
 BACKUP ~Spiritwalker/Backup~ // So WeiDU can uninstall
 AUTHOR ~Ulb~
+README ~Spiritwalker/readme/readme-%LANGUAGE%.pdf~ // Shows readme file
 README ~Spiritwalker/readme.pdf~ // Shows readme file
-VERSION ~1.2~
+VERSION ~1.3~
 
 ALWAYS
   INCLUDE ~Spiritwalker/lib/functions.tph~   // Borrowed from Argent77 for dynamic animtion slot search code
@@ -13,7 +14,7 @@ END
   
 LANGUAGE ~English~  ~English~ ~Spiritwalker/translations/english/UB#SW.tra~
 LANGUAGE ~Italian] [Translation by Keerian, proofreading by Aedan and Improbabile~  ~Italian~ ~Spiritwalker/translations/italian/UB#SW.tra~
-//LANGUAGE ~French] [Translation by xxxxxxxxxxxxxx~  ~French~  ~Spiritwalker/translations/french/UB#SW.tra~  
+//LANGUAGE ~French] [Translation by Gwendolyne and his team~  ~French~  ~Spiritwalker/translations/french/UB#SW.tra~  
   
 
   
