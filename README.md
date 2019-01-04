@@ -149,6 +149,7 @@ Requires: Spirit Essence: Crane - Mystic Insight.
 - Argent77 for his WeiDU functions and work on NearInfinity  
 - Keerian for the Italian translation  
 - Aedan and Improbabile for proofreading (Italian translation)  
+- Gwendolyne and his team for the French translation
 
 **Programms used:**  
 Audacity  
