@@ -5,6 +5,7 @@ README ~Spiritwalker/readme/readme-%LANGUAGE%.pdf~ // Shows readme file
 VERSION ~1.3~
 
 ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/RA_SPHERE_COMPAT.tpa~ // Raduziel's DoF's sphere system
   INCLUDE ~Spiritwalker/lib/functions.tph~   // Borrowed from Argent77 for dynamic animtion slot search code
   INCLUDE ~Spiritwalker/lib/fl#add_kit_ee.tpa~ // EE compatibility patch, updated version by Subtledoctor
   ACTION_IF (NOT GAME_IS ~soa tob iwd2 pst bg1 totsc iwd how totlm tutu tutu_totsc bgt ca iwd_in_bg2 bg2ee eet iwdee~) THEN BEGIN     // Check if BGEE/SOD
@@ -73,6 +74,11 @@ ADD_KIT ~UB#SW~
   LAF fl#add_kit_ee
     STR_VAR
     kit_name = UB#SW
+  END
+  
+  // shpere system
+  ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+  LAF RA_SPHERE_COMPAT STR_VAR kitname = ~UB#SW~ clabfile = ~CLABUB$W~ END
   END
 
   
